@@ -1,0 +1,2 @@
+rm ../condor_TopTaggerTrim_TopTagger
+python python_condor_TopTaggerTrim_Gen.py TopTagger >> ../condor_TopTaggerTrim_TopTagger

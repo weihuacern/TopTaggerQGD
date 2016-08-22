@@ -1,0 +1,101 @@
+#The valid run types for TopTaggerTrim are TopTagger! While the current run type is : TopTagger
+universe = vanilla
+request_disk   = 50 GB
+request_memory = 1.5 GB
+executable = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/goTopTaggerTrim.sh
+should_transfer_files = YES
+#when_to_transfer_output = ON_EXIT
+
+##transfer file list for TopTagger samples
+transfer_input_files = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/TopTaggerTrim, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/NTuple_TopTaggerTrim.py, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/goTopTaggerTrim.sh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-1200To2500_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph.txt.aa, 
+
+Output = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/res/Trim_$(Process).stdout
+Error = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/res/Trim_$(Process).stderr
+Log = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/res/Trim_$(Process).log
+notify_user = hua.wei@cern.ch
+
+#### TTJets_ ####
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+Queue
+
+#### ZJetsToNuNu_HT- ####
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.aa
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.aa
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-1200To2500_13TeV-madgraph.txt.aa
+Queue
+
+arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph.txt.aa
+Queue
+
