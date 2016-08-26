@@ -17,7 +17,7 @@ git cms-init
 git cms-merge-topic -u cms-met:CMSSW_8_0_X-METFilterUpdate
 git clone -b TestMiniAOD git@github.com:susy2015/recipeAUX.git
 git clone git@github.com:susy2015/SusyAnaTools.git
-git clone https://github.com/susy2015/QCD.git
+git clone git@github.com:susy2015/TopTagger.git
 scram b -j 10
 ```
 
