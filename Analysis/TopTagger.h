@@ -48,6 +48,34 @@ TriggerEff myTriggerEff;
 const double Scale = 1;
 //const double Scale = 591.5/2153.736;
 
+void prepareJetsForTagger(
+                          std::string runtype,
+                          const std::vector<TLorentzVector> &inijetsLVec, 
+                          const std::vector<int> &inirecoJetsFlavor,
+                          const std::vector<double> &iniqgLikelihood,
+                          const std::vector<double> &inirecoJetsBtag, 
+                          std::vector<TLorentzVector> &jetsLVec_forTagger, 
+                          std::vector<double> &recoJetsBtag_forTagger
+                         )
+{
+  if( !( (runtype == "Normal") || (runtype == "MCTruth") || (runtype == "QGD") ) )
+  {
+    std::cout << "Invalid run Type!! Please Check!" << std::endl;
+    return ;
+  }
+
+  jetsLVec_forTagger.clear(); recoJetsBtag_forTagger.clear();
+  for(unsigned int ij=0; ij<inijetsLVec.size(); ij++)
+  {
+    if( !AnaFunctions::jetPassCuts(inijetsLVec[ij], AnaConsts::pt30Arr) ) continue; 
+    if( runtype == "MCTruth" && (inirecoJetsFlavor[ij]>6 || inirecoJetsFlavor[ij]==0) ) continue;
+    if( runtype == "QGD" && (iniqgLikelihood[ij]<0.5 && iniqgLikelihood[ij]>=0) ) continue;
+
+    jetsLVec_forTagger.push_back(inijetsLVec.at(ij));
+    recoJetsBtag_forTagger.push_back(inirecoJetsBtag.at(ij));
+  }
+  return ;
+}
 //##########functions to calculate Delta_R and Delta Phi###############
 double DeltaPhi(double phi1, double phi2) 
 {

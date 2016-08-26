@@ -64,7 +64,19 @@ void LoopTopTaggerEff( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerEffSa
       std::vector<int> qgMult = tr.getVec<int>("qgMult");
       std::vector<int> recoJetsFlavor= tr.getVec<int>("recoJetsFlavor"); //[-5,-1] and [1,5] are quark jet, 21 is gluon jet, then what the hell is 0 ??
       //std::vector<>  = tr.getVec<>("");
-
+      //(myMisTagHistgram.h_b_ht)->Fill(ht,thisweight);
+      for(auto i=0;i<jetsLVec.size();i++)
+      {
+        int pdgid = recoJetsFlavor.at(i);
+        (myEffHistgram.h_b_qglikelihood)->Fill(qgLikelihood.at(i),thisweight);
+        if(std::abs(pdgid) >=1 && std::abs(pdgid) <=5) (myEffHistgram.h_b_qglikelihood_qjets)->Fill(qgLikelihood.at(i),thisweight);
+        else if(pdgid == 21) (myEffHistgram.h_b_qglikelihood_gjets)->Fill(qgLikelihood.at(i),thisweight);
+        else if(pdgid == 0) (myEffHistgram.h_b_qglikelihood_pjets)->Fill(qgLikelihood.at(i),thisweight);
+        else{ std::cout << "Not a quark, gluon or pileup jet, what the fuck!! PDGID : " << pdgid << std::endl; }
+        (myEffHistgram.h_b_jetid)->Fill(pdgid,thisweight);
+        (myEffHistgram.h_b_jetid_qglikelihood)->Fill(pdgid,qgLikelihood.at(i),thisweight);
+      }
+    
     }//end of inner loop
     i++;
   }//end of QCD Samples loop
@@ -83,13 +95,21 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
   std::vector<QCDSampleInfo>::iterator iter_QCDSampleInfos;
   int i = 0;
 
+  //use class BaselineVessel in the SusyAnaTools/Tools/baselineDef.h file
+  std::string spec = "QCD";
+  myBaselineVessel = new BaselineVessel(spec);
+
   std::cout << "TopTagger MisTag calculation: " << std::endl;
 
   for(iter_QCDSampleInfos = myTopTaggerMisTagSampleWeight.QCDSampleInfos.begin(); iter_QCDSampleInfos != myTopTaggerMisTagSampleWeight.QCDSampleInfos.end(); iter_QCDSampleInfos++)
   {
     //use class NTupleReader in the SusyAnaTools/Tools/NTupleReader.h file
     NTupleReader tr((*iter_QCDSampleInfos).chain);
-
+    //initialize the type3Ptr defined in the customize.h
+    AnaFunctions::prepareTopTagger();
+    //The passBaseline is registered here
+    tr.registerFunction(&mypassBaselineFunc);
+    
     double thisweight = (*iter_QCDSampleInfos).weight;
     std::cout <<"Sample Type: "<< (*iter_QCDSampleInfos).QCDTag << "; Weight: " << thisweight << std::endl;
 
@@ -97,7 +117,15 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
     {
       if(tr.getEvtNum()%20000 == 0) std::cout << tr.getEvtNum() << "\t" << ((clock() - t0)/1000000.0) << std::endl;
       double met = tr.getVar<double>("met");
+      //double met = tr.getVar<double>("cleanMetPt");
 
+      //int cntNJetsPt50Eta24 = AnaFunctions::countJets(tr.getVec<TLorentzVector>("jetsLVecLepCleaned"), AnaConsts::pt50Eta24Arr);
+      //int cntNJetsPt30Eta24 = AnaFunctions::countJets(tr.getVec<TLorentzVector>("jetsLVecLepCleaned"), AnaConsts::pt30Eta24Arr);
+      //bool passnJets = true;
+      //if( cntNJetsPt50Eta24 < AnaConsts::nJetsSelPt50Eta24 ){ passnJets = false; }
+      //if( cntNJetsPt30Eta24 < AnaConsts::nJetsSelPt30Eta24 ){ passnJets = false; }
+      bool passnJets = tr.getVar<bool>("passnJets"+spec);
+      if(!passnJets) continue;
       //jet related variables
       std::vector<TLorentzVector> jetsLVec = tr.getVec<TLorentzVector>("jetsLVec");
       std::vector<double> qgLikelihood = tr.getVec<double>("qgLikelihood");
@@ -107,6 +135,71 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
       std::vector<int> recoJetsFlavor= tr.getVec<int>("recoJetsFlavor"); //[-5,-1] and [1,5] are quark jet, 21 is gluon jet, then what the hell is 0 ??
       //std::vector<>  = tr.getVec<>("");
 
+      (myMisTagHistgram.h_denominator_met)->Fill(met,thisweight);
+
+      TLorentzVector metLVec; metLVec.SetPtEtaPhiM(tr.getVar<double>("met"), 0, tr.getVar<double>("metphi"), 0);
+      std::vector<TLorentzVector> *jetsLVec_forTagger = new std::vector<TLorentzVector>(); std::vector<double> *recoJetsBtag_forTagger = new std::vector<double>();
+
+      prepareJetsForTagger(
+                           "Normal",
+                           jetsLVec, 
+                           recoJetsFlavor,
+                           qgLikelihood,
+                           tr.getVec<double>("recoJetsBtag_0"), 
+                           (*jetsLVec_forTagger), 
+                           (*recoJetsBtag_forTagger)
+                          );
+      topTagger::type3TopTagger * mytoptagger_2016ICHEP;
+      mytoptagger_2016ICHEP = new topTagger::type3TopTagger();
+      mytoptagger_2016ICHEP->setnJetsSel(4);
+      mytoptagger_2016ICHEP->setCSVS(0.800);
+      mytoptagger_2016ICHEP->setCSVToFake(1);
+      mytoptagger_2016ICHEP->processEvent((*jetsLVec_forTagger), (*recoJetsBtag_forTagger), metLVec);
+      if(mytoptagger_2016ICHEP->nTopCandSortedCnt>=1 && mytoptagger_2016ICHEP->passNewTaggerReq()) 
+      { 
+        (myMisTagHistgram.h_numerator_normal_met)->Fill(met,thisweight);
+      }
+
+      prepareJetsForTagger(
+                           "MCTruth",
+                           jetsLVec,
+                           recoJetsFlavor,
+                           qgLikelihood,
+                           tr.getVec<double>("recoJetsBtag_0"),
+                           (*jetsLVec_forTagger),
+                           (*recoJetsBtag_forTagger)
+                          );
+      topTagger::type3TopTagger * mytoptagger_MCTruth;
+      mytoptagger_MCTruth = new topTagger::type3TopTagger();
+      mytoptagger_MCTruth->setnJetsSel(4);
+      mytoptagger_MCTruth->setCSVS(0.800);
+      mytoptagger_MCTruth->setCSVToFake(1);
+      mytoptagger_MCTruth->processEvent((*jetsLVec_forTagger), (*recoJetsBtag_forTagger), metLVec);
+      if(mytoptagger_MCTruth->nTopCandSortedCnt>=1 && mytoptagger_MCTruth->passNewTaggerReq()) 
+      { 
+        (myMisTagHistgram.h_numerator_mctruth_met)->Fill(met,thisweight);
+      }
+
+
+      prepareJetsForTagger(
+                           "QGD",
+                           jetsLVec,
+                           recoJetsFlavor,
+                           qgLikelihood,
+                           tr.getVec<double>("recoJetsBtag_0"),
+                           (*jetsLVec_forTagger),
+                           (*recoJetsBtag_forTagger)
+                          );
+      topTagger::type3TopTagger * mytoptagger_QGD;
+      mytoptagger_QGD = new topTagger::type3TopTagger();
+      mytoptagger_QGD->setnJetsSel(4);
+      mytoptagger_QGD->setCSVS(0.800);
+      mytoptagger_QGD->setCSVToFake(1);
+      mytoptagger_QGD->processEvent((*jetsLVec_forTagger), (*recoJetsBtag_forTagger), metLVec);
+      if(mytoptagger_QGD->nTopCandSortedCnt>=1 && mytoptagger_QGD->passNewTaggerReq()) 
+      { 
+        (myMisTagHistgram.h_numerator_qgd_met)->Fill(met,thisweight);
+      }
     }//end of inner loop
     i++;
   }//end of QCD Samples loop
@@ -141,7 +234,7 @@ int main(int argc, char* argv[])
 
   //sample needed in the basic check loop
   QCDSampleWeight myTopTaggerMisTagSampleWeight;
-  myTopTaggerMisTagSampleWeight.QCDSampleInfo_push_back( "_ZJetsToNuNu_HT-400To600"  ,    10.73,       1020309, LUMI, 1.23, inputFileList_MisTag.c_str() );
+  //myTopTaggerMisTagSampleWeight.QCDSampleInfo_push_back( "_ZJetsToNuNu_HT-400To600"  ,    10.73,       1020309, LUMI, 1.23, inputFileList_MisTag.c_str() );
   myTopTaggerMisTagSampleWeight.QCDSampleInfo_push_back( "_ZJetsToNuNu_HT-600To800"  ,  0.853*3,       5712221, LUMI, 1.23, inputFileList_MisTag.c_str() );
   myTopTaggerMisTagSampleWeight.QCDSampleInfo_push_back( "_ZJetsToNuNu_HT-800To1200" ,  0.394*3,       1944423, LUMI, 1.23, inputFileList_MisTag.c_str() );
   myTopTaggerMisTagSampleWeight.QCDSampleInfo_push_back( "_ZJetsToNuNu_HT-1200To2500", 0.0974*3,        513471, LUMI, 1.23, inputFileList_MisTag.c_str() );

@@ -80,10 +80,10 @@ int main(int argc, char* argv[])
     passTopTaggerTrim = ( met > 150 )
                 //&& passnJets
                 && passHT
-                && passMT2;
+                //&& passMT2
                 //&& passTagger
                 //&& passBJets
-                //&& passNoiseEventFilter;
+                && passNoiseEventFilter;
 
     if(passTopTaggerTrim) selectedTree->Fill();
     else continue;

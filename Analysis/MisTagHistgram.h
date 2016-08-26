@@ -2,13 +2,16 @@
 
 #include "TFile.h"
 #include "TH1D.h"
+#include "TH2D.h"
 
 class MisTagHistgram
 {
  public:
   void BookHistgram(const char *);
   TFile *oFile;
-  //closure plots on different variables and search bins
-  TH1D *h_pred_met, *h_pred_njets30, *h_pred_njets50, *h_pred_mt2, *h_pred_ht, *h_pred_mht, *h_pred_ntopjets, *h_pred_nbjets;
-  TH1D *h_exp_met, *h_exp_njets30, *h_exp_njets50, *h_exp_mt2, *h_exp_ht, *h_exp_mht, *h_exp_ntopjets, *h_exp_nbjets;
+  //plot for mistag rate plotting
+  TH1D *h_denominator_met, *h_denominator_njets30, *h_denominator_njets50, *h_denominator_mt2, *h_denominator_ht, *h_denominator_mht, *h_denominator_ntopjets, *h_denominator_nbjets;
+  TH1D *h_numerator_normal_met, *h_numerator_normal_njets30, *h_numerator_normal_njets50, *h_numerator_normal_mt2, *h_numerator_normal_ht, *h_numerator_normal_mht, *h_numerator_normal_ntopjets, *h_numerator_normal_nbjets;
+  TH1D *h_numerator_mctruth_met, *h_numerator_mctruth_njets30, *h_numerator_mctruth_njets50, *h_numerator_mctruth_mt2, *h_numerator_mctruth_ht, *h_numerator_mctruth_mht, *h_numerator_mctruth_ntopjets, *h_numerator_mctruth_nbjets;
+  TH1D *h_numerator_qgd_met, *h_numerator_qgd_njets30, *h_numerator_qgd_njets50, *h_numerator_qgd_mt2, *h_numerator_qgd_ht, *h_numerator_qgd_mht, *h_numerator_qgd_ntopjets, *h_numerator_qgd_nbjets;
 };
