@@ -19,7 +19,13 @@
 #include "SusyAnaTools/Tools/NTupleReader.h"
 #include "SusyAnaTools/Tools/baselineDef.h"
 
-//#include "CMSStylePlot/CMS_lumi.h"
+//Header file for new top tagger
+#include "TopTagger/TopTagger/include/TopTagger.h"
+#include "TopTagger/TopTagger/include/TopTaggerResults.h"
+#include "TopTagger/TopTagger/include/TopTaggerUtilities.h"
+//#include "TaggerTest/include/TaggerUtility.h"
+//#include "TaggerTest/include/PlotUtility.h"
+
 #include "TriggerEff.h"
 #include "QCDReWeighting.h"
 #include "TTFactors.h"

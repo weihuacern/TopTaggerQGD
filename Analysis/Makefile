@@ -1,6 +1,8 @@
 IDIR       = .
 ODIR       = obj
 SDIR       = ../../SusyAnaTools/Tools
+TTSDIR     = ../../src/TopTagger/TopTagger/src
+TPSDIR     = ../../src/TopTagger/CfgParser/src
 
 #CXX       = ~/.vim/bundle/ClangComplete/bin/cc_args.py g++
 CXX        = g++
@@ -22,11 +24,14 @@ CXXDEPFLAGS = -MMD -MP
 LD       = g++
 LDFLAGS  =
 
-LIBS     = $(shell root-config --glibs)
-MT2LIB     = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lrecipeAUXOxbridgeMT2
-LHAPDFLIB  = -L$(LHAPDF_DATA_PATH)/../../lib -lLHAPDF
+LIBS         = $(shell root-config --glibs)
+MT2LIB       = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lrecipeAUXOxbridgeMT2
+TopTaggerLIB = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lTopTaggerTopTagger -lTopTaggerCfgParser
+LHAPDFLIB    = -L$(LHAPDF_DATA_PATH)/../../lib -lLHAPDF
 
-PROGRAMS = tupleTest TopTagger
+PROGRAMS = tupleTest TopTaggerQGD
+
+LIBRARIES = TopTagger
 
 all: mkobj sampPyWrap $(PROGRAMS)
 
@@ -57,11 +62,23 @@ $(ODIR)/%.o : $(IDIR)/%.C
 $(ODIR)/%.o : $(IDIR)/%.cc
 	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -o $@ -c $<
 
+$(ODIR)/%.o : $(TTSDIR)/%.cc
+	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -fPIC -o $@ -c $<
+
+$(ODIR)/%.o : $(TTSDIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -fPIC -o $@ -c $<
+
+$(ODIR)/%.o : $(TPSDIR)/%.cc
+	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -fPIC -o $@ -c $<
+
+$(ODIR)/%.o : $(TPSDIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -fPIC -o $@ -c $<
+
 tupleTest: $(ODIR)/NTupleReader.o $(ODIR)/PDFUncertainty.o $(ODIR)/tupleReadTest.o
 	$(LD) $^ $(LIBS) $(MT2LIB) $(LHAPDFLIB) -o $@
 
-TopTagger: $(ODIR)/TopTagger.o $(ODIR)/NTupleReader.o $(ODIR)/TriggerEff.o $(ODIR)/QCDReWeighting.o $(ODIR)/TTFactors.o $(ODIR)/EffHistgram.o $(ODIR)/MisTagHistgram.o
-	$(LD) $^ $(LIBS) $(MT2LIB) -o $@
+TopTaggerQGD: $(ODIR)/TopTaggerQGD.o $(ODIR)/NTupleReader.o $(ODIR)/TriggerEff.o $(ODIR)/QCDReWeighting.o $(ODIR)/TTFactors.o $(ODIR)/EffHistgram.o $(ODIR)/MisTagHistgram.o
+	$(LD) $^ $(LIBS) $(MT2LIB) $(TopTaggerLIB) -o $@
 
 clean:
 	rm -f $(ODIR)/*.o $(ODIR)/*.d $(ODIR)/*.so $(PROGRAMS) core 
