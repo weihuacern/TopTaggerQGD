@@ -29,7 +29,7 @@ MT2LIB       = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lrecipeAUXOxbridgeMT2
 TopTaggerLIB = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lTopTaggerTopTagger -lTopTaggerCfgParser
 LHAPDFLIB    = -L$(LHAPDF_DATA_PATH)/../../lib -lLHAPDF
 
-PROGRAMS = tupleTest TopTaggerQGD
+PROGRAMS = tupleTest TopTaggerQGD TopTaggerQGDPlots
 
 LIBRARIES = TopTagger
 
@@ -80,6 +80,8 @@ tupleTest: $(ODIR)/NTupleReader.o $(ODIR)/PDFUncertainty.o $(ODIR)/tupleReadTest
 TopTaggerQGD: $(ODIR)/TopTaggerQGD.o $(ODIR)/NTupleReader.o $(ODIR)/TriggerEff.o $(ODIR)/QCDReWeighting.o $(ODIR)/TTFactors.o $(ODIR)/EffHistgram.o $(ODIR)/MisTagHistgram.o
 	$(LD) $^ $(LIBS) $(MT2LIB) $(TopTaggerLIB) -o $@
 
+TopTaggerQGDPlots: $(ODIR)/TopTaggerQGDPlots.o
+	$(LD) $^ $(LIBS)  -o $@
 clean:
 	rm -f $(ODIR)/*.o $(ODIR)/*.d $(ODIR)/*.so $(PROGRAMS) core 
 

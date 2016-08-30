@@ -42,19 +42,27 @@ void LoopTopTaggerEff( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerEffSa
   std::vector<QCDSampleInfo>::iterator iter_QCDSampleInfos;
   int i = 0;
 
+  //use class BaselineVessel in the SusyAnaTools/Tools/baselineDef.h file
+  std::string spec = "TopTaggerTest";
+  myBaselineVessel = new BaselineVessel(spec);
   std::cout << "TopTagger Efficiency calculation: " << std::endl;
-
   for(iter_QCDSampleInfos = myTopTaggerEffSampleWeight.QCDSampleInfos.begin(); iter_QCDSampleInfos != myTopTaggerEffSampleWeight.QCDSampleInfos.end(); iter_QCDSampleInfos++)
   {  
     //use class NTupleReader in the SusyAnaTools/Tools/NTupleReader.h file
     NTupleReader tr((*iter_QCDSampleInfos).chain);
- 
+     //initialize the type3Ptr defined in the customize.h
+    AnaFunctions::prepareTopTagger();
+    //The passBaseline is registered here
+    tr.registerFunction(&mypassBaselineFunc);
+
     double thisweight = (*iter_QCDSampleInfos).weight;
     std::cout <<"Sample Type: "<< (*iter_QCDSampleInfos).QCDTag << "; Weight: " << thisweight << std::endl;
     
     while(tr.getNextEvent())
     {
       if(tr.getEvtNum()%20000 == 0) std::cout << tr.getEvtNum() << "\t" << ((clock() - t0)/1000000.0) << std::endl;
+      bool passnJets = tr.getVar<bool>("passnJets"+spec);
+      if(!passnJets) continue;
 
       //jet related variables
       std::vector<TLorentzVector> jetsLVec = tr.getVec<TLorentzVector>("jetsLVec");
@@ -200,9 +208,7 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
   //use class BaselineVessel in the SusyAnaTools/Tools/baselineDef.h file
   std::string spec = "TopTaggerTest";
   myBaselineVessel = new BaselineVessel(spec);
-
   std::cout << "TopTagger MisTag calculation: " << std::endl;
-
   for(iter_QCDSampleInfos = myTopTaggerMisTagSampleWeight.QCDSampleInfos.begin(); iter_QCDSampleInfos != myTopTaggerMisTagSampleWeight.QCDSampleInfos.end(); iter_QCDSampleInfos++)
   {
     //use class NTupleReader in the SusyAnaTools/Tools/NTupleReader.h file
@@ -218,16 +224,17 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
     while(tr.getNextEvent())
     {
       if(tr.getEvtNum()%20000 == 0) std::cout << tr.getEvtNum() << "\t" << ((clock() - t0)/1000000.0) << std::endl;
-      double met = tr.getVar<double>("met");
-      //double met = tr.getVar<double>("cleanMetPt");
-
-      //int cntNJetsPt50Eta24 = AnaFunctions::countJets(tr.getVec<TLorentzVector>("jetsLVecLepCleaned"), AnaConsts::pt50Eta24Arr);
-      //int cntNJetsPt30Eta24 = AnaFunctions::countJets(tr.getVec<TLorentzVector>("jetsLVecLepCleaned"), AnaConsts::pt30Eta24Arr);
-      //bool passnJets = true;
-      //if( cntNJetsPt50Eta24 < AnaConsts::nJetsSelPt50Eta24 ){ passnJets = false; }
-      //if( cntNJetsPt30Eta24 < AnaConsts::nJetsSelPt30Eta24 ){ passnJets = false; }
       bool passnJets = tr.getVar<bool>("passnJets"+spec);
       if(!passnJets) continue;
+
+      double met = tr.getVar<double>("met");
+      int njets30 = tr.getVar<int>("cntNJetsPt30Eta24"+spec);
+      int njets50 = tr.getVar<int>("cntNJetsPt50Eta24"+spec);
+      double ht = tr.getVar<double>("HT"+spec);
+      TLorentzVector mht_TLV = AnaFunctions::calcMHT(tr.getVec<TLorentzVector>("jetsLVec"), AnaConsts::pt30Eta24Arr);
+      double mht = mht_TLV.Pt();
+      int nbotjets = tr.getVar<int>("cntCSVS"+spec);
+
       //jet related variables
       std::vector<TLorentzVector> jetsLVec = tr.getVec<TLorentzVector>("jetsLVec");
       std::vector<double> qgLikelihood = tr.getVec<double>("qgLikelihood");
@@ -235,11 +242,15 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
       std::vector<double> qgAxis2 = tr.getVec<double>("qgAxis2");
       std::vector<int> qgMult = tr.getVec<int>("qgMult");
       std::vector<int> recoJetsFlavor= tr.getVec<int>("recoJetsFlavor"); //[-5,-1] and [1,5] are quark jet, 21 is gluon jet, then what the hell is 0 ??
-      //std::vector<>  = tr.getVec<>("");
       
       //Denominator for Mistag rate
       (myMisTagHistgram.h_denominator_met)->Fill(met,thisweight);
-      
+      (myMisTagHistgram.h_denominator_njets30)->Fill(njets30,thisweight);
+      (myMisTagHistgram.h_denominator_njets50)->Fill(njets50,thisweight);
+      (myMisTagHistgram.h_denominator_ht)->Fill(ht,thisweight);
+      (myMisTagHistgram.h_denominator_mht)->Fill(mht,thisweight);
+      (myMisTagHistgram.h_denominator_nbotjets)->Fill(nbotjets,thisweight);
+
       //configure top tagger
       TLorentzVector metLVec; metLVec.SetPtEtaPhiM(tr.getVar<double>("met"), 0, tr.getVar<double>("metphi"), 0);
       std::vector<TLorentzVector> *jetsLVec_forTagger = new std::vector<TLorentzVector>(); std::vector<double> *recoJetsBtag_forTagger = new std::vector<double>();
@@ -254,18 +265,20 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
                            (*jetsLVec_forTagger), 
                            (*recoJetsBtag_forTagger)
                           );
-      TopTagger tt_Normal;
-      tt_Normal.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_Normal = (*jetsLVec_forTagger);
-      const std::vector<double> &recoJetsBtag_ForTop_Normal = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_Normal = ttUtility::packageConstituents(jetsLVec_ForTop_Normal, recoJetsBtag_ForTop_Normal);
-      tt_Normal.runTagger(constituents_Normal);
+      TopTagger tt_Normal; tt_Normal.setCfgFile("Example_TopTagger.cfg");
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_Normal = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_Normal = (*recoJetsBtag_forTagger);
+      std::vector<Constituent> constituents_Normal = ttUtility::packageConstituents(jetsLVec_ForTop_Normal, recoJetsBtag_ForTop_Normal); tt_Normal.runTagger(constituents_Normal);
       const TopTaggerResults& ttr_Normal = tt_Normal.getResults();
       //std::vector<TopObject*> Ntop = ttr.getTops();
       //std::vector<TopObject> NtopCand = ttr.getTopCandidates();
       if( (ttr_Normal.getTops()).size()>=1 ) 
       { 
         (myMisTagHistgram.h_numerator_normal_met)->Fill(met,thisweight);
+        (myMisTagHistgram.h_numerator_normal_njets30)->Fill(njets30,thisweight);
+        (myMisTagHistgram.h_numerator_normal_njets50)->Fill(njets50,thisweight);
+        (myMisTagHistgram.h_numerator_normal_ht)->Fill(ht,thisweight);
+        (myMisTagHistgram.h_numerator_normal_mht)->Fill(mht,thisweight);
+        (myMisTagHistgram.h_numerator_normal_nbotjets)->Fill(nbotjets,thisweight);
       }
 
       prepareJetsForTagger(
@@ -277,16 +290,18 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
                            (*jetsLVec_forTagger),
                            (*recoJetsBtag_forTagger)
                           );
-      TopTagger tt_MCTruth;
-      tt_MCTruth.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_MCTruth = (*jetsLVec_forTagger);
-      const std::vector<double> &recoJetsBtag_ForTop_MCTruth = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_MCTruth = ttUtility::packageConstituents(jetsLVec_ForTop_MCTruth, recoJetsBtag_ForTop_MCTruth);
-      tt_MCTruth.runTagger(constituents_MCTruth);
+      TopTagger tt_MCTruth; tt_MCTruth.setCfgFile("Example_TopTagger.cfg");
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_MCTruth = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_MCTruth = (*recoJetsBtag_forTagger);
+      std::vector<Constituent> constituents_MCTruth = ttUtility::packageConstituents(jetsLVec_ForTop_MCTruth, recoJetsBtag_ForTop_MCTruth); tt_MCTruth.runTagger(constituents_MCTruth);
       const TopTaggerResults& ttr_MCTruth = tt_MCTruth.getResults();
       if( (ttr_MCTruth.getTops()).size()>=1 )
       {
         (myMisTagHistgram.h_numerator_mctruth_met)->Fill(met,thisweight);
+        (myMisTagHistgram.h_numerator_mctruth_njets30)->Fill(njets30,thisweight);
+        (myMisTagHistgram.h_numerator_mctruth_njets50)->Fill(njets50,thisweight);
+        (myMisTagHistgram.h_numerator_mctruth_ht)->Fill(ht,thisweight);
+        (myMisTagHistgram.h_numerator_mctruth_mht)->Fill(mht,thisweight);
+        (myMisTagHistgram.h_numerator_mctruth_nbotjets)->Fill(nbotjets,thisweight);
       }
 
       prepareJetsForTagger(
@@ -300,14 +315,17 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
                           );
       TopTagger tt_QGD;
       tt_QGD.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_QGD = (*jetsLVec_forTagger);
-      const std::vector<double> &recoJetsBtag_ForTop_QGD = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_QGD = ttUtility::packageConstituents(jetsLVec_ForTop_QGD, recoJetsBtag_ForTop_QGD);
-      tt_QGD.runTagger(constituents_QGD);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_QGD = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_QGD = (*recoJetsBtag_forTagger);
+      std::vector<Constituent> constituents_QGD = ttUtility::packageConstituents(jetsLVec_ForTop_QGD, recoJetsBtag_ForTop_QGD); tt_QGD.runTagger(constituents_QGD);
       const TopTaggerResults& ttr_QGD = tt_QGD.getResults();
       if( (ttr_QGD.getTops()).size()>=1 )
       {
         (myMisTagHistgram.h_numerator_qgd_met)->Fill(met,thisweight);
+        (myMisTagHistgram.h_numerator_qgd_njets30)->Fill(njets30,thisweight);    
+        (myMisTagHistgram.h_numerator_qgd_njets50)->Fill(njets50,thisweight);
+        (myMisTagHistgram.h_numerator_qgd_ht)->Fill(ht,thisweight);
+        (myMisTagHistgram.h_numerator_qgd_mht)->Fill(mht,thisweight);
+        (myMisTagHistgram.h_numerator_qgd_nbotjets)->Fill(nbotjets,thisweight);
       }
     }//end of inner loop
     i++;
