@@ -7,116 +7,1212 @@ should_transfer_files = YES
 #when_to_transfer_output = ON_EXIT
 
 ##transfer file list for TopTagger samples
-transfer_input_files = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/TopTaggerTrim, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/NTuple_TopTaggerTrim.py, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/goTopTaggerTrim.sh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-1200To2500_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ag, 
+transfer_input_files = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/TopTaggerTrim, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/NTuple_TopTaggerTrim.py, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/goTopTaggerTrim.sh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.co, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cr, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ct, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cy, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.da, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.db, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.de, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.df, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.di, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dk, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.do, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.co, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cr, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ct, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cy, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.co, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cp, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cq, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cr, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cs, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ct, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af, $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/QGDStudyFile/QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag, 
 
 Output = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/res/Trim_$(Process).stdout
 Error = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/res/Trim_$(Process).stderr
 Log = $ENV(CMSSW_BASE)/src/TopTaggerQGD/TrimTools/QCDStopFlattrees/res/Trim_$(Process).log
 notify_user = hua.wei@cern.ch
 
-#### TTJets_ ####
+#### QCD_HT ####
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aa
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
 Queue
 
-arguments = $ENV(CMSSW_BASE) TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
 Queue
 
-#### ZJetsToNuNu_HT- ####
-
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.aa
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ab
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ac
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ad
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.aa
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ab
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ac
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ad
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ae
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.af
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-600To800_13TeV-madgraph.txt.ag
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.aa
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ab
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-800To1200_13TeV-madgraph.txt.ac
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-1200To2500_13TeV-madgraph.txt.aa
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-2500ToInf_13TeV-madgraph.txt.aa
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ae
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.af
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az
 Queue
 
-arguments = $ENV(CMSSW_BASE) ZJetsToNuNu_HT-400To600_13TeV-madgraph.txt.ag
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1000to1500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.co
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cr
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ct
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cy
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.da
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.db
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.de
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.df
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dh
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.di
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dk
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.dn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.do
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.co
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cr
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ct
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cy
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT200to300_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT300to500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ao
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ap
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ar
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.as
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.at
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.au
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.av
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ax
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ay
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.az
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ba
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.be
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bh
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bi
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bk
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bo
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.br
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bt
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bu
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bv
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bw
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bx
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.by
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.bz
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ca
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cb
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cc
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cd
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ce
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cf
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cg
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ch
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ci
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ck
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cl
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cm
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cn
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.co
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cp
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cq
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cr
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.cs
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ct
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ah
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ai
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.aj
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ak
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.al
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.am
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT1500to2000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.an
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ab
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ac
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ad
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ae
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.af
+Queue
+
+arguments = $ENV(CMSSW_BASE) QCD_HT2000toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt.ag
 Queue
 

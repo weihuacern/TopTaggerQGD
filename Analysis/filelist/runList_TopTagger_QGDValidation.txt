@@ -1,0 +1,2 @@
+root://cmseos.fnal.gov//store/group/lpcsusyhad/hua/Skimmed_2015Nov15/QGDValidation/stopFlatNtuples_2016ICHEP.root
+root://cmseos.fnal.gov//store/group/lpcsusyhad/hua/Skimmed_2015Nov15/QGDValidation/stopFlatNtuples_QGtest.root

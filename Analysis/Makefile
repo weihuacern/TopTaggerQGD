@@ -29,7 +29,7 @@ MT2LIB       = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lrecipeAUXOxbridgeMT2
 TopTaggerLIB = -L$(CMSSW_BASE)/lib/${SCRAM_ARCH}/ -lTopTaggerTopTagger -lTopTaggerCfgParser
 LHAPDFLIB    = -L$(LHAPDF_DATA_PATH)/../../lib -lLHAPDF
 
-PROGRAMS = tupleTest TopTaggerQGD TopTaggerQGDPlots
+PROGRAMS = tupleTest TopTaggerQGD QGDNtupleValidation TopTaggerQGDPlots
 
 LIBRARIES = TopTagger
 
@@ -56,10 +56,16 @@ $(ODIR)/%.o : $(SDIR)/%.C
 $(ODIR)/%.o : $(SDIR)/%.cc
 	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -o $@ -c $<
 
+$(ODIR)/%.o : $(SDIR)/%.cpp
+	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -o $@ -c $<
+
 $(ODIR)/%.o : $(IDIR)/%.C
 	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -o $@ -c $<
 
 $(ODIR)/%.o : $(IDIR)/%.cc
+	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -o $@ -c $<
+
+$(ODIR)/%.o : $(IDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -o $@ -c $<
 
 $(ODIR)/%.o : $(TTSDIR)/%.cc
@@ -74,10 +80,13 @@ $(ODIR)/%.o : $(TPSDIR)/%.cc
 $(ODIR)/%.o : $(TPSDIR)/%.cpp
 	$(CXX) $(CXXFLAGS) $(CXXDEPFLAGS) -fPIC -o $@ -c $<
 
-tupleTest: $(ODIR)/NTupleReader.o $(ODIR)/PDFUncertainty.o $(ODIR)/tupleReadTest.o
+tupleTest: $(ODIR)/NTupleReader.o $(ODIR)/SATException.o $(ODIR)/PDFUncertainty.o $(ODIR)/searchBins.o $(ODIR)/tupleReadTest.o
 	$(LD) $^ $(LIBS) $(MT2LIB) $(LHAPDFLIB) -o $@
 
-TopTaggerQGD: $(ODIR)/TopTaggerQGD.o $(ODIR)/NTupleReader.o $(ODIR)/TriggerEff.o $(ODIR)/QCDReWeighting.o $(ODIR)/TTFactors.o $(ODIR)/EffHistgram.o $(ODIR)/MisTagHistgram.o
+TopTaggerQGD: $(ODIR)/TopTaggerQGD.o $(ODIR)/NTupleReader.o $(ODIR)/SATException.o $(ODIR)/TriggerEff.o $(ODIR)/QCDReWeighting.o $(ODIR)/TTFactors.o $(ODIR)/BasicQGDHistgram.o $(ODIR)/EffHistgram.o $(ODIR)/MisTagHistgram.o
+	$(LD) $^ $(LIBS) $(MT2LIB) $(TopTaggerLIB) -o $@
+
+QGDNtupleValidation: $(ODIR)/QGDNtupleValidation.o $(ODIR)/NTupleReader.o $(ODIR)/SATException.o $(ODIR)/TriggerEff.o $(ODIR)/QCDReWeighting.o $(ODIR)/EffHistgram.o
 	$(LD) $^ $(LIBS) $(MT2LIB) $(TopTaggerLIB) -o $@
 
 TopTaggerQGDPlots: $(ODIR)/TopTaggerQGDPlots.o

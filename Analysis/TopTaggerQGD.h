@@ -29,6 +29,7 @@
 #include "TriggerEff.h"
 #include "QCDReWeighting.h"
 #include "TTFactors.h"
+#include "BasicQGDHistgram.h"
 #include "EffHistgram.h"
 #include "MisTagHistgram.h"
 
@@ -75,8 +76,13 @@ void prepareJetsForTagger(
   {
     if( !AnaFunctions::jetPassCuts(inijetsLVec[ij], AnaConsts::pt30Arr) ) continue; 
     if( runtype == "MCTruth" && (inirecoJetsFlavor[ij]==21 || inirecoJetsFlavor[ij]==0) ) continue;
-    if( runtype == "QGD" && (iniqgLikelihood[ij]<0.3 && iniqgLikelihood[ij]>=0) ) continue;
-
+    if( runtype == "QGD" ) 
+    {
+      if( inirecoJetsBtag.at(ij)<0.46 )//do not apply QGD on b jet
+      {
+        if( iniqgLikelihood[ij]<0.1 && iniqgLikelihood[ij]>=0 ) continue;
+      }
+    }
     jetsLVec_forTagger.push_back(inijetsLVec.at(ij));
     recoJetsBtag_forTagger.push_back(inirecoJetsBtag.at(ij));
   }

@@ -22,6 +22,9 @@ class TopTaggerQGDPlots
  public:
   std::string target_DIR;
 
+  TFile * finCheck;
+  TList * listCheck;
+
   TFile * finEff;
   TList * listEff;
 
@@ -40,12 +43,12 @@ class TopTaggerQGDPlots
                        double min,
                        double max
                        );
-  void CompareTemplate(
-                       TString hist_tag,
-                       TString XTitle,
-                       double min,
-                       double max
-                       );
+  void EffPlots(
+                TString hist_tag,
+                TString XTitle,
+                double min,
+                double max
+               );
   void MisTagRatePlots(
                        TString hist_tag,
                        TString XTitle,
@@ -59,15 +62,12 @@ void TopTaggerQGDPlots::Initialization(std::string dir)
   target_DIR = dir;
   system( ("mkdir " + dir).c_str() );
 
+  finCheck = TFile::Open("RootForPlotting/TopTaggerQGDCheck.root");
+  listCheck = finCheck->GetListOfKeys();
   finEff = TFile::Open("RootForPlotting/TopTaggerEff.root");
   listEff = finEff->GetListOfKeys();
   finMisTag = TFile::Open("RootForPlotting/TopTaggerMisTag.root");
   listMisTag = finMisTag->GetListOfKeys();
-
-  //convert lumi from double pb-1 to string, fb-1
-  std::ostringstream strs;
-  strs << (4000/1000);
-  lumi_str = strs.str();
 }
 
 void TopTaggerQGDPlots::PrintPlotsName()
@@ -76,7 +76,12 @@ void TopTaggerQGDPlots::PrintPlotsName()
   {
     std::cout<<"Name: "<< listEff->At(i)->GetName() << "("<< i <<")"<<std::endl;
   }
-  
+ 
+  for(int i  = 0 ; i < listMisTag->GetSize() ; i++)
+  {
+    std::cout<<"Name: "<< listMisTag->At(i)->GetName() << "("<< i <<")"<<std::endl;
+  }
+ 
   return ;
 }
 
@@ -87,28 +92,37 @@ void TopTaggerQGDPlots::JetsComparePlots(
                                          double max
                                         )
 { 
-  TH1D * h_qjets;
+  TH1D * h_ljets;
+  TH1D * h_cjets;
+  TH1D * h_bjets;
   TH1D * h_gjets;
   TH1D * h_pjets;
 
-  int NHist = listEff->GetSize();;
+  int NHist = listCheck->GetSize();;
 
-  //Get Eff and Pred from root file
   for(int i  = 0 ; i < NHist ; i++)
   {
-    if( TString(listEff->At(i)->GetName()).Contains( hist_tag ) )
+    if( TString(listCheck->At(i)->GetName()).Contains( hist_tag ) )
     {
-      if( TString(listEff->At(i)->GetName()).Contains( "_qjets" ) )
+      if( TString(listCheck->At(i)->GetName()).Contains( "_ljets" ) )
       {
-        h_qjets = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
+        h_ljets = (TH1D*)finCheck->Get(listCheck->At(i)->GetName())->Clone();
       }
-      if( TString(listEff->At(i)->GetName()).Contains( "_gjets" ) )
-      {
-        h_gjets = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
+      if( TString(listCheck->At(i)->GetName()).Contains( "_cjets" ) )
+      { 
+        h_cjets = (TH1D*)finCheck->Get(listCheck->At(i)->GetName())->Clone();
       }
-      if( TString(listEff->At(i)->GetName()).Contains( "_pjets" ) )
+      if( TString(listCheck->At(i)->GetName()).Contains( "_bjets" ) )
+      { 
+        h_bjets = (TH1D*)finCheck->Get(listCheck->At(i)->GetName())->Clone();
+      }
+      if( TString(listCheck->At(i)->GetName()).Contains( "_gjets" ) )
       {
-        h_pjets = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
+        h_gjets = (TH1D*)finCheck->Get(listCheck->At(i)->GetName())->Clone();
+      }
+      if( TString(listCheck->At(i)->GetName()).Contains( "_pjets" ) )
+      {
+        h_pjets = (TH1D*)finCheck->Get(listCheck->At(i)->GetName())->Clone();
       }
     }
     else
@@ -119,20 +133,30 @@ void TopTaggerQGDPlots::JetsComparePlots(
   //c->SetLogy();
   gStyle->SetOptStat(0);
 
-  h_qjets->GetXaxis()->SetRangeUser(min,max);
-  h_qjets->GetXaxis()->SetTitle(XTitle);
-  //h_qjets->GetYaxis()->SetRangeUser(1000,10000000);
-  h_qjets->SetLineColor(1);
+  h_ljets->GetXaxis()->SetRangeUser(min,max);
+  h_ljets->GetXaxis()->SetTitle(XTitle);
+  //h_ljets->GetYaxis()->SetRangeUser(1000,10000000);
+  h_ljets->SetLineColor(1);
+
+  h_cjets->GetXaxis()->SetRangeUser(min,max);
+  h_cjets->GetXaxis()->SetTitle(XTitle);
+  h_cjets->SetLineColor(2);
+
+  h_bjets->GetXaxis()->SetRangeUser(min,max);
+  h_bjets->GetXaxis()->SetTitle(XTitle);
+  h_bjets->SetLineColor(3);
 
   h_gjets->GetXaxis()->SetRangeUser(min,max);
   h_gjets->GetXaxis()->SetTitle(XTitle);
-  h_gjets->SetLineColor(2);
+  h_gjets->SetLineColor(4);
 
   h_pjets->GetXaxis()->SetRangeUser(min,max);
   h_pjets->GetXaxis()->SetTitle(XTitle);
-  h_pjets->SetLineColor(3);
+  h_pjets->SetLineColor(5);
 
-  h_qjets->Draw();
+  h_ljets->Draw();
+  h_cjets->Draw("same");
+  h_bjets->Draw("same");
   h_gjets->Draw("same");
   h_pjets->Draw("same");
 
@@ -151,8 +175,11 @@ void TopTaggerQGDPlots::JetsComparePlots(
   leg->SetFillColor(0);
   leg->SetTextFont(42);
   leg->SetTextSize(0.03);
+  //leg->SetHeader("QCD HT MC : Jet Type");
   leg->SetHeader("TTJets Inc MC : Jet Type");
-  leg->AddEntry(h_qjets,"Quark Jet");
+  leg->AddEntry(h_ljets,"Light Quark Jet");
+  leg->AddEntry(h_cjets,"C Quark Jet");
+  leg->AddEntry(h_bjets,"B Quark Jet");
   leg->AddEntry(h_gjets,"Gluon Jet");
   leg->AddEntry(h_pjets,"Pileup Jet");
   leg->Draw("same");
@@ -163,72 +190,95 @@ void TopTaggerQGDPlots::JetsComparePlots(
   return ;
 }
 
-/*
-void TopTaggerQGDPlots::CompareTemplate(
-                                   TString hist_tag,
-                                   TString XTitle,
-                                   double min,
-                                   double max
-                                  )
-{ 
-  TH1D * h_inverted;
-  TH1D * h_normal;
+void TopTaggerQGDPlots::EffPlots(
+                                 TString hist_tag,
+                                 TString XTitle,
+                                 double min,
+                                 double max
+                                )
+{
+  TH1D *eff_h_d;
+  TH1D *eff_h_n_normal;
+  TH1D *eff_h_n_mctruth;
+  TH1D *eff_h_n_qgd;
 
-  for(int i  = 0 ; i < list->GetSize() ; i++)
+  int NHist = listEff->GetSize();;
+
+  for(int i  = 0 ; i < NHist ; i++)
   {
-    if( TString(list->At(i)->GetName()).Contains( hist_tag ) )
+    if( TString(listEff->At(i)->GetName()).Contains( hist_tag ) )
     {
-      if( TString(list->At(i)->GetName()).Contains( "_inverted_" ) )
+      if( TString(listEff->At(i)->GetName()).Contains( "_denominator_" ) )
       {
-        h_inverted = (TH1D*)fin->Get(list->At(i)->GetName())->Clone();
+        eff_h_d = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
       }
-      if( TString(list->At(i)->GetName()).Contains( "_exp_" ) )
+      if( TString(listEff->At(i)->GetName()).Contains( "_numerator_normal_" ) )
       {
-        h_normal = (TH1D*)fin->Get(list->At(i)->GetName())->Clone();
+        eff_h_n_normal = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
+      }
+      if( TString(listEff->At(i)->GetName()).Contains( "_numerator_mctruth_" ) )
+      {
+        eff_h_n_mctruth = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
+      }
+      if( TString(listEff->At(i)->GetName()).Contains( "_numerator_qgd_" ) )
+      {
+        eff_h_n_qgd = (TH1D*)finEff->Get(listEff->At(i)->GetName())->Clone();
       }
     }
     else
       continue;
   }
 
-  TCanvas *c = new TCanvas("c","A Simple Graph Example",200,10,700,500); 
+  TCanvas *eff_c = new TCanvas("eff_c","A Simple Graph Example",200,10,700,500);
+  //eff_c->SetLogy();
   gStyle->SetOptStat(0);
 
-  h_inverted->GetXaxis()->SetRangeUser(min,max);
-  h_inverted->GetXaxis()->SetTitle(XTitle);
-  h_inverted->SetLineColor(1);
-  h_inverted->SetLineWidth(3);
-  h_inverted->Sumw2();
+  eff_h_n_normal->GetXaxis()->SetRangeUser(min,max);
+  eff_h_n_normal->GetXaxis()->SetTitle(XTitle);
+  eff_h_n_normal->GetYaxis()->SetRangeUser(0,1);
 
-  h_normal->GetXaxis()->SetRangeUser(min,max);
-  h_normal->GetXaxis()->SetTitle(XTitle);
-  h_normal->SetLineColor(2);
-  h_normal->SetLineWidth(3);
-  h_normal->Sumw2();
+  eff_h_n_normal->Divide(eff_h_d);
+  eff_h_n_normal->SetLineColor(1);
 
-  h_inverted->Draw(); 
-  h_normal->Draw("same");
+  eff_h_n_mctruth->GetXaxis()->SetRangeUser(min,max);
+  eff_h_n_mctruth->GetXaxis()->SetTitle(XTitle);
+  eff_h_n_mctruth->Divide(eff_h_d);
+  eff_h_n_mctruth->SetLineColor(2);
 
-  const std::string titre="CMS Preliminary 2015, 3 fb^{-1}, #sqrt{s} = 13 TeV";
-  TLatex *title = new TLatex(0.09770115,0.9194915,titre.c_str());
-  title->SetNDC();
-  title->SetTextSize(0.045);
-  title->Draw("same");
+  eff_h_n_qgd->GetXaxis()->SetRangeUser(min,max);
+  eff_h_n_qgd->GetXaxis()->SetTitle(XTitle);
+  eff_h_n_qgd->Divide(eff_h_d);
+  eff_h_n_qgd->SetLineColor(3);
 
-  TLegend* leg = new TLegend(0.6,0.75,0.85,0.85);
-  leg->SetBorderSize(0);
-  leg->SetTextFont(42);
-  leg->SetFillColor(0);
-  leg->AddEntry(h_normal,"Normal","l");
-  leg->AddEntry(h_inverted,"Inverted Delat Phi","l");
-  leg->Draw("same");
+  eff_h_n_normal->Draw();
+  eff_h_n_mctruth->Draw("same");
+  eff_h_n_qgd->Draw("same");
 
-  c->SaveAs( hist_tag + TString("_normal_inverted.png") );
-  c->SaveAs( hist_tag + TString("_normal_inverted.pdf") );
-  c->SaveAs( hist_tag + TString("_normal_inverted.C") );
-  return ;
+  const std::string titre="CMS Preliminary 2016";
+  TLatex *eff_title = new TLatex(0.09770115,0.9194915,titre.c_str());
+  eff_title->SetNDC();
+  eff_title->SetTextSize(0.045);
+  eff_title->Draw("same");
+
+  //Create Legend
+  TLegend *eff_leg = new TLegend(0.70,0.75,0.90,0.90);
+  eff_leg->SetBorderSize(1);
+  eff_leg->SetLineColor(1);
+  eff_leg->SetLineWidth(2);
+  eff_leg->SetFillColor(0);
+  eff_leg->SetTextFont(42);
+  eff_leg->SetTextSize(0.03);
+  eff_leg->SetHeader("Top Tag Eff");
+  eff_leg->AddEntry(eff_h_n_normal,"Normal");
+  eff_leg->AddEntry(eff_h_n_mctruth,"MCTruth");
+  eff_leg->AddEntry(eff_h_n_qgd,"QGD");
+  eff_leg->Draw("same");
+
+  eff_c->SaveAs( target_DIR + TString("/_Eff") + hist_tag + TString(".png") );
+  eff_c->SaveAs( target_DIR + TString("/_Eff") + hist_tag + TString(".pdf") );
+  eff_c->SaveAs( target_DIR + TString("/_Eff") + hist_tag + TString(".C") );
+  return ; 
 }
-*/
 
 void TopTaggerQGDPlots::MisTagRatePlots(
                                         TString hist_tag,
@@ -237,10 +287,10 @@ void TopTaggerQGDPlots::MisTagRatePlots(
                                         double max
                                        )
 {
-  TH1D * h_d;
-  TH1D * h_n_normal;
-  TH1D * h_n_mctruth;
-  TH1D * h_n_qgd;
+  TH1D * mistag_h_d;
+  TH1D * mistag_h_n_normal;
+  TH1D * mistag_h_n_mctruth;
+  TH1D * mistag_h_n_qgd;
 
   int NHist = listMisTag->GetSize();;
 
@@ -250,74 +300,73 @@ void TopTaggerQGDPlots::MisTagRatePlots(
     {
       if( TString(listMisTag->At(i)->GetName()).Contains( "_denominator_" ) )
       {
-        h_d = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
+        mistag_h_d = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
       }
       if( TString(listMisTag->At(i)->GetName()).Contains( "_numerator_normal_" ) )
       {
-        h_n_normal = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
+        mistag_h_n_normal = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
       }
       if( TString(listMisTag->At(i)->GetName()).Contains( "_numerator_mctruth_" ) )
       {
-        h_n_mctruth = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
+        mistag_h_n_mctruth = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
       }
       if( TString(listMisTag->At(i)->GetName()).Contains( "_numerator_qgd_" ) )
       {
-        h_n_qgd = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
+        mistag_h_n_qgd = (TH1D*)finMisTag->Get(listMisTag->At(i)->GetName())->Clone();
       }
     }
     else
       continue;
   }
 
-  TCanvas *c = new TCanvas("c","A Simple Graph Example",200,10,700,500);
-  //c->SetLogy();
+  TCanvas *mistag_c = new TCanvas("mistag_c","A Simple Graph Example",200,10,700,500);
+  //mistag_c->SetLogy();
   gStyle->SetOptStat(0);
 
-  h_n_normal->GetXaxis()->SetRangeUser(min,max);
-  h_n_normal->GetXaxis()->SetTitle(XTitle);
-  h_n_normal->GetYaxis()->SetRangeUser(0,1);
+  mistag_h_n_normal->GetXaxis()->SetRangeUser(min,max);
+  mistag_h_n_normal->GetXaxis()->SetTitle(XTitle);
+  mistag_h_n_normal->GetYaxis()->SetRangeUser(0,1);
 
-  h_n_normal->Divide(h_d);
-  h_n_normal->SetLineColor(1);
+  mistag_h_n_normal->Divide(mistag_h_d);
+  mistag_h_n_normal->SetLineColor(1);
 
-  h_n_mctruth->GetXaxis()->SetRangeUser(min,max);
-  h_n_mctruth->GetXaxis()->SetTitle(XTitle);
-  h_n_mctruth->Divide(h_d);
-  h_n_mctruth->SetLineColor(2);
+  mistag_h_n_mctruth->GetXaxis()->SetRangeUser(min,max);
+  mistag_h_n_mctruth->GetXaxis()->SetTitle(XTitle);
+  mistag_h_n_mctruth->Divide(mistag_h_d);
+  mistag_h_n_mctruth->SetLineColor(2);
 
-  h_n_qgd->GetXaxis()->SetRangeUser(min,max);
-  h_n_qgd->GetXaxis()->SetTitle(XTitle);
-  h_n_qgd->Divide(h_d);
-  h_n_qgd->SetLineColor(3);
+  mistag_h_n_qgd->GetXaxis()->SetRangeUser(min,max);
+  mistag_h_n_qgd->GetXaxis()->SetTitle(XTitle);
+  mistag_h_n_qgd->Divide(mistag_h_d);
+  mistag_h_n_qgd->SetLineColor(3);
 
-  h_n_normal->Draw();
-  h_n_mctruth->Draw("same");
-  h_n_qgd->Draw("same");
+  mistag_h_n_normal->Draw();
+  mistag_h_n_mctruth->Draw("same");
+  mistag_h_n_qgd->Draw("same");
 
   const std::string titre="CMS Preliminary 2016";
-  TLatex *title = new TLatex(0.09770115,0.9194915,titre.c_str());
-  title->SetNDC();
-  title->SetTextSize(0.045);
-  title->Draw("same");
+  TLatex *mistag_title = new TLatex(0.09770115,0.9194915,titre.c_str());
+  mistag_title->SetNDC();
+  mistag_title->SetTextSize(0.045);
+  mistag_title->Draw("same");
 
   //Create Legend
-  TLegend* leg = new TLegend(0.70,0.75,0.90,0.90);
-  leg->SetBorderSize(1);
-  leg->SetLineColor(1);
-  leg->SetLineWidth(2);
-  leg->SetFillColor(0);
-  leg->SetTextFont(42);
-  leg->SetTextSize(0.03);
-  leg->SetHeader("Top MisTag Rate");
-  leg->AddEntry(h_n_normal,"Normal");
-  leg->AddEntry(h_n_mctruth,"MCTruth");
-  leg->AddEntry(h_n_qgd,"QGD");
-  leg->Draw("same");
+  TLegend *mistag_leg = new TLegend(0.70,0.75,0.90,0.90);
+  mistag_leg->SetBorderSize(1);
+  mistag_leg->SetLineColor(1);
+  mistag_leg->SetLineWidth(2);
+  mistag_leg->SetFillColor(0);
+  mistag_leg->SetTextFont(42);
+  mistag_leg->SetTextSize(0.03);
+  mistag_leg->SetHeader("Top MisTag Rate");
+  mistag_leg->AddEntry(mistag_h_n_normal,"Normal");
+  mistag_leg->AddEntry(mistag_h_n_mctruth,"MCTruth");
+  mistag_leg->AddEntry(mistag_h_n_qgd,"QGD");
+  mistag_leg->Draw("same");
 
-  c->SaveAs( target_DIR + TString("/_MisTagRate") + hist_tag + TString(".png") );
-  c->SaveAs( target_DIR + TString("/_MisTagRate") + hist_tag + TString(".pdf") );
-  c->SaveAs( target_DIR + TString("/_MisTagRate") + hist_tag + TString(".C") );
-
+  mistag_c->SaveAs( target_DIR + TString("/_MisTagRate") + hist_tag + TString(".png") );
+  mistag_c->SaveAs( target_DIR + TString("/_MisTagRate") + hist_tag + TString(".pdf") );
+  mistag_c->SaveAs( target_DIR + TString("/_MisTagRate") + hist_tag + TString(".C") );
   return ;
 }
 

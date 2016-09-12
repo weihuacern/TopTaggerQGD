@@ -31,7 +31,9 @@ int main(int argc, char* argv[])
 
   TopTaggerQGDPlots myTopTaggerQGDPlots;
   myTopTaggerQGDPlots.Initialization(DirName);
+  //myTopTaggerQGDPlots.PrintPlotsName();
   //initialize the closure plots parameter we want to investigate
+  /*
   std::vector<Plotting_Parameter> myPlotting_Paramete = 
   { 
     //QCD closure plots
@@ -51,14 +53,22 @@ int main(int argc, char* argv[])
                                          (*iter_p).max 
                                         );
   }
-
+  */
+  /*
+  myTopTaggerQGDPlots.EffPlots("_gentoppt", "GenTop Pt[GeV]"       , 0  , 1000);
+  myTopTaggerQGDPlots.EffPlots("_met"     , "MET[GeV]"             , 150, 1000);
+  myTopTaggerQGDPlots.EffPlots("_njets30" , "Number of 30 GeV jets", 4  , 17);
+  myTopTaggerQGDPlots.EffPlots("_njets50" , "Number of 50 GeV jets", 2  , 15);
+  myTopTaggerQGDPlots.EffPlots("_ht"      , "HT[GeV]"              , 500, 3000);
+  myTopTaggerQGDPlots.EffPlots("_mht"     , "MHT[GeV]"             , 0  , 1000);
+  myTopTaggerQGDPlots.EffPlots("_nbotjets", "Number of B Jets"     , 1  , 8);
+	*/
   myTopTaggerQGDPlots.MisTagRatePlots("_met"     , "MET[GeV]"             , 150, 1000);
   myTopTaggerQGDPlots.MisTagRatePlots("_njets30" , "Number of 30 GeV jets", 4  , 17);
   myTopTaggerQGDPlots.MisTagRatePlots("_njets50" , "Number of 50 GeV jets", 2  , 15);
   myTopTaggerQGDPlots.MisTagRatePlots("_ht"      , "HT[GeV]"              , 500, 3000);
   myTopTaggerQGDPlots.MisTagRatePlots("_mht"     , "MHT[GeV]"             , 0  , 1000);
   myTopTaggerQGDPlots.MisTagRatePlots("_nbotjets", "Number of B Jets"     , 1  , 8);
-
   return 0;
 }
 
