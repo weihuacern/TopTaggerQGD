@@ -188,6 +188,46 @@ bool GetMatchedTop(
 }
 */
 
+int Set_jetptbin_number( double jetpt )
+{
+  int jetptbin_num = -1;
+
+  for(int i=0;i<JETSPT_BINS;i++)
+  {
+    if(i!=JETSPT_BINS-1)
+    {
+      if(jetpt >= jetptbins_edge[i] && jetpt < jetptbins_edge[i+1]){ jetptbin_num = i; return jetptbin_num; }
+    }
+    else
+    {
+      if(jetpt >= jetptbins_edge[i]){ jetptbin_num = i; return jetptbin_num; }
+    }
+  }
+
+  return jetptbin_num;
+}
+
+
+int Set_jetetabin_number( double jeteta )
+{
+  int jetetabin_num = -1;
+
+  for(int i=0;i<JETSPT_BINS;i++)
+  {
+    if(i!=JETSPT_BINS-1)
+    {
+      if(jeteta >= jetetabins_edge[i] && jeteta < jetetabins_edge[i+1]){ jetetabin_num = i; return jetetabin_num; }
+    }
+    else
+    {
+      if(jeteta >= jetetabins_edge[i]){ jetetabin_num = i; return jetetabin_num; }
+    }
+  }
+
+  return jetetabin_num;
+}
+
+
 //##########functions to calculate Delta_R and Delta Phi###############
 double DeltaPhi(double phi1, double phi2) 
 {

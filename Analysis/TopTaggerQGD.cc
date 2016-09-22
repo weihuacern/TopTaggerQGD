@@ -69,14 +69,37 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         int pdgid = recoJetsFlavor.at(i);
         (myBasicQGDHistgram.h_b_jetid)->Fill(pdgid,thisweight);
         (myBasicQGDHistgram.h_b_jetid_qglikelihood)->Fill(pdgid,qgLikelihood.at(i),thisweight);
+        
+        (myBasicQGDHistgram.h_b_jeteta)->Fill((jetsLVec.at(i)).Eta(),thisweight);
+        (myBasicQGDHistgram.h_b_jetpt)->Fill((jetsLVec.at(i)).Pt(),thisweight);
 
+        int jetetaid = Set_jetetabin_number( std::abs((jetsLVec.at(i)).Eta()) );
+        int jetptid = Set_jetptbin_number( (jetsLVec.at(i)).Pt() );
+        if(jetetaid<0 || jetptid<0){ std::cout << "Negative jeteta id or jetptid!! Jet Eta : " << (jetsLVec.at(i)).Eta() << " Jet Pt : " << (jetsLVec.at(i)).Pt() << std::endl; continue; }
         (myBasicQGDHistgram.h_b_qglikelihood)->Fill(qgLikelihood.at(i),thisweight);
         (myBasicQGDHistgram.h_b_qgptd)->Fill(qgPtD.at(i),thisweight);
         (myBasicQGDHistgram.h_b_qgaxis2)->Fill(qgAxis2.at(i),thisweight);
         (myBasicQGDHistgram.h_b_qgmult)->Fill(qgMult.at(i),thisweight);
-        
+ 
+        (myBasicQGDHistgram.h_b_qglikelihoodjetetabin[jetetaid])->Fill(qgLikelihood.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgptdjetetabin[jetetaid])->Fill(qgPtD.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgaxis2jetetabin[jetetaid])->Fill(qgAxis2.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgmultjetetabin[jetetaid])->Fill(qgMult.at(i),thisweight);
+
+        (myBasicQGDHistgram.h_b_qglikelihoodjetptbin[jetptid])->Fill(qgLikelihood.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgptdjetptbin[jetptid])->Fill(qgPtD.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgaxis2jetptbin[jetptid])->Fill(qgAxis2.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgmultjetptbin[jetptid])->Fill(qgMult.at(i),thisweight);
+
+        (myBasicQGDHistgram.h_b_qglikelihoodjetetaptbin[jetetaid][jetptid])->Fill(qgLikelihood.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgptdjetetaptbin[jetetaid][jetptid])->Fill(qgPtD.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgaxis2jetetaptbin[jetetaid][jetptid])->Fill(qgAxis2.at(i),thisweight);
+        (myBasicQGDHistgram.h_b_qgmultjetetaptbin[jetetaid][jetptid])->Fill(qgMult.at(i),thisweight);
+
         if(std::abs(pdgid) >= 1 && std::abs(pdgid) <= 3)
-        { 
+        {
+          (myBasicQGDHistgram.h_b_jeteta_ljets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
+          (myBasicQGDHistgram.h_b_jetpt_ljets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
           (myBasicQGDHistgram.h_b_qglikelihood_ljets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_ljets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_ljets)->Fill(qgAxis2.at(i),thisweight);
@@ -84,6 +107,8 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         }
         else if(std::abs(pdgid) == 4)
         {
+          (myBasicQGDHistgram.h_b_jeteta_cjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
+          (myBasicQGDHistgram.h_b_jetpt_cjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
           (myBasicQGDHistgram.h_b_qglikelihood_cjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_cjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_cjets)->Fill(qgAxis2.at(i),thisweight);
@@ -91,6 +116,8 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         }
         else if(std::abs(pdgid) == 5)
         {
+          (myBasicQGDHistgram.h_b_jeteta_bjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
+          (myBasicQGDHistgram.h_b_jetpt_bjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
           (myBasicQGDHistgram.h_b_qglikelihood_bjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_bjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_bjets)->Fill(qgAxis2.at(i),thisweight);
@@ -98,6 +125,8 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         }
         else if(pdgid == 21)
         { 
+          (myBasicQGDHistgram.h_b_jeteta_gjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
+          (myBasicQGDHistgram.h_b_jetpt_gjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
           (myBasicQGDHistgram.h_b_qglikelihood_gjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_gjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_gjets)->Fill(qgAxis2.at(i),thisweight);
@@ -105,6 +134,8 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         }
         else if(pdgid == 0)
         { 
+          (myBasicQGDHistgram.h_b_jeteta_pjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
+          (myBasicQGDHistgram.h_b_jetpt_pjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
           (myBasicQGDHistgram.h_b_qglikelihood_pjets)->Fill(qgLikelihood.at(i),thisweight); 
           (myBasicQGDHistgram.h_b_qgptd_pjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_pjets)->Fill(qgAxis2.at(i),thisweight);

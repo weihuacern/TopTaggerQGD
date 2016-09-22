@@ -21,4 +21,4 @@ git clone git@github.com:susy2015/TopTagger.git
 scram b -j 10
 ```
 
-
+./TopTaggerQGD Check filelist/runList_TopTagger_QCD_2016ICHEPv8.txt filelist/runList_TopTagger_Eff_2016ICHEPv8.txt filelist/runList_TopTagger_MisTag_2016ICHEPv8.txt
