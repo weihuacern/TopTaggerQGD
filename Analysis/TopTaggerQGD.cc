@@ -100,46 +100,126 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         {
           (myBasicQGDHistgram.h_b_jeteta_ljets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_ljets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+
           (myBasicQGDHistgram.h_b_qglikelihood_ljets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_ljets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_ljets)->Fill(qgAxis2.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgmult_ljets)->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetabin_ljets[jetetaid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetabin_ljets[jetetaid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetabin_ljets[jetetaid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetabin_ljets[jetetaid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetptbin_ljets[jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetptbin_ljets[jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetptbin_ljets[jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetptbin_ljets[jetptid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetaptbin_ljets[jetetaid][jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetaptbin_ljets[jetetaid][jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetaptbin_ljets[jetetaid][jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetaptbin_ljets[jetetaid][jetptid])->Fill(qgMult.at(i),thisweight);
         }
         else if(std::abs(pdgid) == 4)
         {
           (myBasicQGDHistgram.h_b_jeteta_cjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_cjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+
           (myBasicQGDHistgram.h_b_qglikelihood_cjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_cjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_cjets)->Fill(qgAxis2.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgmult_cjets)->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetabin_cjets[jetetaid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetabin_cjets[jetetaid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetabin_cjets[jetetaid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetabin_cjets[jetetaid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetptbin_cjets[jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetptbin_cjets[jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetptbin_cjets[jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetptbin_cjets[jetptid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetaptbin_cjets[jetetaid][jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetaptbin_cjets[jetetaid][jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetaptbin_cjets[jetetaid][jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetaptbin_cjets[jetetaid][jetptid])->Fill(qgMult.at(i),thisweight);
         }
         else if(std::abs(pdgid) == 5)
         {
           (myBasicQGDHistgram.h_b_jeteta_bjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_bjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+
           (myBasicQGDHistgram.h_b_qglikelihood_bjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_bjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_bjets)->Fill(qgAxis2.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgmult_bjets)->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetabin_bjets[jetetaid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetabin_bjets[jetetaid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetabin_bjets[jetetaid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetabin_bjets[jetetaid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetptbin_bjets[jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetptbin_bjets[jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetptbin_bjets[jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetptbin_bjets[jetptid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetaptbin_bjets[jetetaid][jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetaptbin_bjets[jetetaid][jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetaptbin_bjets[jetetaid][jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetaptbin_bjets[jetetaid][jetptid])->Fill(qgMult.at(i),thisweight);
         }
         else if(pdgid == 21)
         { 
           (myBasicQGDHistgram.h_b_jeteta_gjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_gjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+
           (myBasicQGDHistgram.h_b_qglikelihood_gjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_gjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_gjets)->Fill(qgAxis2.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgmult_gjets)->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetabin_gjets[jetetaid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetabin_gjets[jetetaid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetabin_gjets[jetetaid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetabin_gjets[jetetaid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetptbin_gjets[jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetptbin_gjets[jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetptbin_gjets[jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetptbin_gjets[jetptid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetaptbin_gjets[jetetaid][jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetaptbin_gjets[jetetaid][jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetaptbin_gjets[jetetaid][jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetaptbin_gjets[jetetaid][jetptid])->Fill(qgMult.at(i),thisweight);
         }
         else if(pdgid == 0)
         { 
           (myBasicQGDHistgram.h_b_jeteta_pjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_pjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+
           (myBasicQGDHistgram.h_b_qglikelihood_pjets)->Fill(qgLikelihood.at(i),thisweight); 
           (myBasicQGDHistgram.h_b_qgptd_pjets)->Fill(qgPtD.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgaxis2_pjets)->Fill(qgAxis2.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgmult_pjets)->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetabin_pjets[jetetaid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetabin_pjets[jetetaid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetabin_pjets[jetetaid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetabin_pjets[jetetaid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetptbin_pjets[jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetptbin_pjets[jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetptbin_pjets[jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetptbin_pjets[jetptid])->Fill(qgMult.at(i),thisweight);
+
+          (myBasicQGDHistgram.h_b_qglikelihoodjetetaptbin_pjets[jetetaid][jetptid])->Fill(qgLikelihood.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgptdjetetaptbin_pjets[jetetaid][jetptid])->Fill(qgPtD.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgaxis2jetetaptbin_pjets[jetetaid][jetptid])->Fill(qgAxis2.at(i),thisweight);
+          (myBasicQGDHistgram.h_b_qgmultjetetaptbin_pjets[jetetaid][jetptid])->Fill(qgMult.at(i),thisweight);
         }
         else{ std::cout << "Not a quark, gluon or pileup jet, what the fuck!! PDGID : " << pdgid << std::endl; }
       }
