@@ -21,6 +21,13 @@ void BasicQGDHistgram::BookHistgram(const char *outFileName)
   h_b_jetpt_gjets = new TH1D("h_b_jetpt_gjets","",500,0,1000);
   h_b_jetpt_pjets = new TH1D("h_b_jetpt_pjets","",500,0,1000);
 
+  h_b_jetcharge = new TH1D("h_b_jetcharge","",100,-1,1);
+  h_b_jetcharge_ljets = new TH1D("h_b_jetcharge_ljets","",100,-1,1);
+  h_b_jetcharge_cjets = new TH1D("h_b_jetcharge_cjets","",100,-1,1);
+  h_b_jetcharge_bjets = new TH1D("h_b_jetcharge_bjets","",100,-1,1);
+  h_b_jetcharge_gjets = new TH1D("h_b_jetcharge_gjets","",100,-1,1);
+  h_b_jetcharge_pjets = new TH1D("h_b_jetcharge_pjets","",100,-1,1);
+
   h_b_qglikelihood = new TH1D("h_b_qglikelihood","",500,-3,2);
   h_b_qglikelihood_ljets = new TH1D("h_b_qglikelihood_ljets","",500,-3,2);
   h_b_qglikelihood_cjets = new TH1D("h_b_qglikelihood_cjets","",500,-3,2);

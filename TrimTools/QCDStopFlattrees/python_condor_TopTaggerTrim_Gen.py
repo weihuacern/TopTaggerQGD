@@ -50,12 +50,12 @@ print ("#The valid run types for TopTaggerTrim are TopTagger! While the current 
 if(runtype == "TopTagger"):
   PrintCondorHeaderLine()
   print("##transfer file list for " + runtype + " samples")
-  #PrintTransferFileLine(d, "TTJets_", True, False)
-  #PrintTransferFileLine(d, "ZJetsToNuNu_HT-", False, True)
-  PrintTransferFileLine(d, "QCD_HT", True, True)
+  PrintTransferFileLine(d, "TTJets_", True, False)
+  PrintTransferFileLine(d, "ZJetsToNuNu_HT-", False, True)
+  #PrintTransferFileLine(d, "QCD_HT", True, True)
   PrintCondorLogLine()
-  #PrintCondorSubmitLine(d, "TTJets_")
-  #PrintCondorSubmitLine(d, "ZJetsToNuNu_HT-")
-  PrintCondorSubmitLine(d, "QCD_HT")
+  PrintCondorSubmitLine(d, "TTJets_")
+  PrintCondorSubmitLine(d, "ZJetsToNuNu_HT-")
+  #PrintCondorSubmitLine(d, "QCD_HT")
 else:
   print ("#Invalid run type for TopTaggerTrim! What the fuck is going on ??!!")

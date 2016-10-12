@@ -14,6 +14,7 @@ class BasicQGDHistgram
 
   TH1D *h_b_jeteta, *h_b_jeteta_ljets, *h_b_jeteta_cjets, *h_b_jeteta_bjets, *h_b_jeteta_gjets, *h_b_jeteta_pjets;
   TH1D *h_b_jetpt, *h_b_jetpt_ljets, *h_b_jetpt_cjets, *h_b_jetpt_bjets, *h_b_jetpt_gjets, *h_b_jetpt_pjets;
+  TH1D *h_b_jetcharge, *h_b_jetcharge_ljets, *h_b_jetcharge_cjets, *h_b_jetcharge_bjets, *h_b_jetcharge_gjets, *h_b_jetcharge_pjets;
   
   TH1D *h_b_qglikelihood, *h_b_qglikelihood_ljets, *h_b_qglikelihood_cjets, *h_b_qglikelihood_bjets, *h_b_qglikelihood_gjets, *h_b_qglikelihood_pjets;
   TH1D *h_b_qgptd, *h_b_qgptd_ljets, *h_b_qgptd_cjets, *h_b_qgptd_bjets, *h_b_qgptd_gjets, *h_b_qgptd_pjets;

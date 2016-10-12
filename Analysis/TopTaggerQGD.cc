@@ -61,6 +61,7 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
       std::vector<double> qgAxis2 = tr.getVec<double>("qgAxis2");
       std::vector<int> qgMult = tr.getVec<int>("qgMult");
       std::vector<int> recoJetsFlavor= tr.getVec<int>("recoJetsFlavor"); //[-5,-1] and [1,5] are quark jet, 21 is gluon jet, then what the hell is 0 ??
+      std::vector<double> recoJetsCharge= tr.getVec<double>("recoJetsCharge_0"); 
       //std::vector<>  = tr.getVec<>("");
       //(myMisTagHistgram.h_b_ht)->Fill(ht,thisweight);
       //basic distribution for jet
@@ -72,7 +73,8 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         
         (myBasicQGDHistgram.h_b_jeteta)->Fill((jetsLVec.at(i)).Eta(),thisweight);
         (myBasicQGDHistgram.h_b_jetpt)->Fill((jetsLVec.at(i)).Pt(),thisweight);
-
+        (myBasicQGDHistgram.h_b_jetcharge)->Fill(recoJetsCharge.at(i),thisweight);
+        //std::cout << recoJetsCharge.at(i) << std::endl;
         int jetetaid = Set_jetetabin_number( std::abs((jetsLVec.at(i)).Eta()) );
         int jetptid = Set_jetptbin_number( (jetsLVec.at(i)).Pt() );
         if(jetetaid<0 || jetptid<0){ std::cout << "Negative jeteta id or jetptid!! Jet Eta : " << (jetsLVec.at(i)).Eta() << " Jet Pt : " << (jetsLVec.at(i)).Pt() << std::endl; continue; }
@@ -100,6 +102,7 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         {
           (myBasicQGDHistgram.h_b_jeteta_ljets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_ljets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+          (myBasicQGDHistgram.h_b_jetcharge_ljets)->Fill(recoJetsCharge.at(i),thisweight);
 
           (myBasicQGDHistgram.h_b_qglikelihood_ljets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_ljets)->Fill(qgPtD.at(i),thisweight);
@@ -125,6 +128,7 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         {
           (myBasicQGDHistgram.h_b_jeteta_cjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_cjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+          (myBasicQGDHistgram.h_b_jetcharge_cjets)->Fill(recoJetsCharge.at(i),thisweight);
 
           (myBasicQGDHistgram.h_b_qglikelihood_cjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_cjets)->Fill(qgPtD.at(i),thisweight);
@@ -150,6 +154,7 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         {
           (myBasicQGDHistgram.h_b_jeteta_bjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_bjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+          (myBasicQGDHistgram.h_b_jetcharge_bjets)->Fill(recoJetsCharge.at(i),thisweight);
 
           (myBasicQGDHistgram.h_b_qglikelihood_bjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_bjets)->Fill(qgPtD.at(i),thisweight);
@@ -175,6 +180,7 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         { 
           (myBasicQGDHistgram.h_b_jeteta_gjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_gjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+          (myBasicQGDHistgram.h_b_jetcharge_gjets)->Fill(recoJetsCharge.at(i),thisweight);
 
           (myBasicQGDHistgram.h_b_qglikelihood_gjets)->Fill(qgLikelihood.at(i),thisweight);
           (myBasicQGDHistgram.h_b_qgptd_gjets)->Fill(qgPtD.at(i),thisweight);
@@ -200,6 +206,7 @@ void LoopTopTaggerCheck( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerChe
         { 
           (myBasicQGDHistgram.h_b_jeteta_pjets)->Fill((jetsLVec.at(i)).Eta(),thisweight);
           (myBasicQGDHistgram.h_b_jetpt_pjets)->Fill((jetsLVec.at(i)).Pt(),thisweight);
+          (myBasicQGDHistgram.h_b_jetcharge_pjets)->Fill(recoJetsCharge.at(i),thisweight);
 
           (myBasicQGDHistgram.h_b_qglikelihood_pjets)->Fill(qgLikelihood.at(i),thisweight); 
           (myBasicQGDHistgram.h_b_qgptd_pjets)->Fill(qgPtD.at(i),thisweight);
@@ -291,6 +298,7 @@ void LoopTopTaggerEff( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerEffSa
       //Get recotop TLVec in 3 types : old tagger, mc truth and qg
       TLorentzVector metLVec; metLVec.SetPtEtaPhiM(tr.getVar<double>("met"), 0, tr.getVar<double>("metphi"), 0);
       std::vector<TLorentzVector> *jetsLVec_forTagger = new std::vector<TLorentzVector>(); std::vector<double> *recoJetsBtag_forTagger = new std::vector<double>();
+      std::vector<double> *qgLikelihood_forTagger = new std::vector<double>();
       //normal top tagger, no QGD
       prepareJetsForTagger(
                            "Normal",
@@ -299,11 +307,12 @@ void LoopTopTaggerEff( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerEffSa
                            qgLikelihood,
                            tr.getVec<double>("recoJetsBtag_0"), 
                            (*jetsLVec_forTagger), 
-                           (*recoJetsBtag_forTagger)
+                           (*recoJetsBtag_forTagger),
+                           (*qgLikelihood_forTagger)
                           );
       TopTagger tt_Normal; tt_Normal.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_Normal = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_Normal = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_Normal = ttUtility::packageConstituents(jetsLVec_ForTop_Normal, recoJetsBtag_ForTop_Normal); tt_Normal.runTagger(constituents_Normal);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_Normal = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_Normal = (*recoJetsBtag_forTagger); const std::vector<double> &qgLikelihood_ForTop_Normal = (*qgLikelihood_forTagger);
+      std::vector<Constituent> constituents_Normal = ttUtility::packageConstituents(jetsLVec_ForTop_Normal, recoJetsBtag_ForTop_Normal, qgLikelihood_ForTop_Normal); tt_Normal.runTagger(constituents_Normal);
       const TopTaggerResults& ttr_Normal = tt_Normal.getResults(); std::vector<TopObject*> NTop_Normal = ttr_Normal.getTops();
       
       //top tagger with quark jet info only
@@ -314,11 +323,12 @@ void LoopTopTaggerEff( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerEffSa
                            qgLikelihood,
                            tr.getVec<double>("recoJetsBtag_0"),
                            (*jetsLVec_forTagger),
-                           (*recoJetsBtag_forTagger)
+                           (*recoJetsBtag_forTagger),
+                           (*qgLikelihood_forTagger)
                           );
       TopTagger tt_MCTruth; tt_MCTruth.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_MCTruth = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_MCTruth = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_MCTruth = ttUtility::packageConstituents(jetsLVec_ForTop_MCTruth, recoJetsBtag_ForTop_MCTruth); tt_MCTruth.runTagger(constituents_MCTruth);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_MCTruth = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_MCTruth = (*recoJetsBtag_forTagger); const std::vector<double> &qgLikelihood_ForTop_MCTruth = (*qgLikelihood_forTagger);
+      std::vector<Constituent> constituents_MCTruth = ttUtility::packageConstituents(jetsLVec_ForTop_MCTruth, recoJetsBtag_ForTop_MCTruth, qgLikelihood_ForTop_MCTruth); tt_MCTruth.runTagger(constituents_MCTruth);
       const TopTaggerResults& ttr_MCTruth = tt_MCTruth.getResults(); std::vector<TopObject*> NTop_MCTruth = ttr_MCTruth.getTops();
 
       //top tagger with qgl hard cut
@@ -329,11 +339,12 @@ void LoopTopTaggerEff( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerEffSa
                            qgLikelihood,
                            tr.getVec<double>("recoJetsBtag_0"),
                            (*jetsLVec_forTagger),
-                           (*recoJetsBtag_forTagger)
+                           (*recoJetsBtag_forTagger),
+                           (*qgLikelihood_forTagger)
                           );
       TopTagger tt_QGD; tt_QGD.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_QGD = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_QGD = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_QGD = ttUtility::packageConstituents(jetsLVec_ForTop_QGD, recoJetsBtag_ForTop_QGD); tt_QGD.runTagger(constituents_QGD);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_QGD = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_QGD = (*recoJetsBtag_forTagger); const std::vector<double> &qgLikelihood_ForTop_QGD = (*qgLikelihood_forTagger);
+      std::vector<Constituent> constituents_QGD = ttUtility::packageConstituents(jetsLVec_ForTop_QGD, recoJetsBtag_ForTop_QGD, qgLikelihood_ForTop_QGD); tt_QGD.runTagger(constituents_QGD);
       const TopTaggerResults& ttr_QGD = tt_QGD.getResults(); std::vector<TopObject*> NTop_QGD = ttr_QGD.getTops();
     
       //matching...dR only
@@ -450,7 +461,7 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
       //configure top tagger
       TLorentzVector metLVec; metLVec.SetPtEtaPhiM(tr.getVar<double>("met"), 0, tr.getVar<double>("metphi"), 0);
       std::vector<TLorentzVector> *jetsLVec_forTagger = new std::vector<TLorentzVector>(); std::vector<double> *recoJetsBtag_forTagger = new std::vector<double>();
-    
+      std::vector<double> *qgLikelihood_forTagger = new std::vector<double>();
       //normal top tagger, no QGD
       prepareJetsForTagger(
                            "Normal",
@@ -459,11 +470,12 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
                            qgLikelihood,
                            tr.getVec<double>("recoJetsBtag_0"), 
                            (*jetsLVec_forTagger), 
-                           (*recoJetsBtag_forTagger)
+                           (*recoJetsBtag_forTagger),
+                           (*qgLikelihood_forTagger)
                           );
       TopTagger tt_Normal; tt_Normal.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_Normal = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_Normal = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_Normal = ttUtility::packageConstituents(jetsLVec_ForTop_Normal, recoJetsBtag_ForTop_Normal); tt_Normal.runTagger(constituents_Normal);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_Normal = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_Normal = (*recoJetsBtag_forTagger); const std::vector<double> &qgLikelihood_ForTop_Normal = (*qgLikelihood_forTagger);
+      std::vector<Constituent> constituents_Normal = ttUtility::packageConstituents(jetsLVec_ForTop_Normal, recoJetsBtag_ForTop_Normal, qgLikelihood_ForTop_Normal); tt_Normal.runTagger(constituents_Normal);
       const TopTaggerResults& ttr_Normal = tt_Normal.getResults();
       //std::vector<TopObject*> Ntop = ttr.getTops();
       //std::vector<TopObject> NtopCand = ttr.getTopCandidates();
@@ -484,11 +496,12 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
                            qgLikelihood,
                            tr.getVec<double>("recoJetsBtag_0"),
                            (*jetsLVec_forTagger),
-                           (*recoJetsBtag_forTagger)
+                           (*recoJetsBtag_forTagger),
+                           (*qgLikelihood_forTagger)
                           );
       TopTagger tt_MCTruth; tt_MCTruth.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_MCTruth = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_MCTruth = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_MCTruth = ttUtility::packageConstituents(jetsLVec_ForTop_MCTruth, recoJetsBtag_ForTop_MCTruth); tt_MCTruth.runTagger(constituents_MCTruth);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_MCTruth = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_MCTruth = (*recoJetsBtag_forTagger); const std::vector<double> &qgLikelihood_ForTop_MCTruth = (*qgLikelihood_forTagger);
+      std::vector<Constituent> constituents_MCTruth = ttUtility::packageConstituents(jetsLVec_ForTop_MCTruth, recoJetsBtag_ForTop_MCTruth, qgLikelihood_ForTop_MCTruth); tt_MCTruth.runTagger(constituents_MCTruth);
       const TopTaggerResults& ttr_MCTruth = tt_MCTruth.getResults();
       if( (ttr_MCTruth.getTops()).size()>=1 )
       {
@@ -507,12 +520,13 @@ void LoopTopTaggerMisTag( TTFactors& myTTFactors, QCDSampleWeight& myTopTaggerMi
                            qgLikelihood,
                            tr.getVec<double>("recoJetsBtag_0"),
                            (*jetsLVec_forTagger),
-                           (*recoJetsBtag_forTagger)
+                           (*recoJetsBtag_forTagger),
+                           (*qgLikelihood_forTagger)
                           );
       TopTagger tt_QGD;
       tt_QGD.setCfgFile("Example_TopTagger.cfg");
-      const std::vector<TLorentzVector> &jetsLVec_ForTop_QGD = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_QGD = (*recoJetsBtag_forTagger);
-      std::vector<Constituent> constituents_QGD = ttUtility::packageConstituents(jetsLVec_ForTop_QGD, recoJetsBtag_ForTop_QGD); tt_QGD.runTagger(constituents_QGD);
+      const std::vector<TLorentzVector> &jetsLVec_ForTop_QGD = (*jetsLVec_forTagger); const std::vector<double> &recoJetsBtag_ForTop_QGD = (*recoJetsBtag_forTagger); const std::vector<double> &qgLikelihood_ForTop_QGD = (*qgLikelihood_forTagger);
+      std::vector<Constituent> constituents_QGD = ttUtility::packageConstituents(jetsLVec_ForTop_QGD, recoJetsBtag_ForTop_QGD, qgLikelihood_ForTop_QGD); tt_QGD.runTagger(constituents_QGD);
       const TopTaggerResults& ttr_QGD = tt_QGD.getResults();
       if( (ttr_QGD.getTops()).size()>=1 )
       {

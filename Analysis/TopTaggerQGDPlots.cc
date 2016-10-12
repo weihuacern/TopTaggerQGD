@@ -38,6 +38,7 @@ int main(int argc, char* argv[])
     //QGD checking plots
     {"_b_jeteta_"      , "Jet Eta"     ,-6.0, 6.0 }, 
     {"_b_jetpt_"       , "Jet Pt"      ,0   , 400 }, 
+    {"_b_jetcharge_"   , "Jet Charge"  ,-1  , 1   },
     {"_b_qglikelihood_", "QGLikelihood",0   , 1   },
     {"_b_qgptd_"       , "QGPtD"       ,0   , 1.1 }, 
     {"_b_qgaxis2_"     , "QGAxis2"     ,0   , 0.2 },
@@ -92,6 +93,27 @@ int main(int argc, char* argv[])
     {"_b_qgptdjetptbin5_"       , "QGPtD"       ,0   , 1.1 },
     {"_b_qgaxis2jetptbin5_"     , "QGAxis2"     ,0   , 0.2 },
     {"_b_qgmultjetptbin5_"      , "QGMult"      ,0   , 50  },
+
+    {"_b_qglikelihoodjetetaptbin41_", "QGLikelihood",0   , 1   },
+    {"_b_qgptdjetetaptbin41_"       , "QGPtD"       ,0   , 1.1 },
+    {"_b_qgaxis2jetetaptbin41_"     , "QGAxis2"     ,0   , 0.2 },
+    {"_b_qgmultjetetaptbin41_"      , "QGMult"      ,0   , 50  },
+    {"_b_qglikelihoodjetetaptbin42_", "QGLikelihood",0   , 1   },
+    {"_b_qgptdjetetaptbin42_"       , "QGPtD"       ,0   , 1.1 },
+    {"_b_qgaxis2jetetaptbin42_"     , "QGAxis2"     ,0   , 0.2 },
+    {"_b_qgmultjetetaptbin42_"      , "QGMult"      ,0   , 50  },
+    {"_b_qglikelihoodjetetaptbin43_", "QGLikelihood",0   , 1   },
+    {"_b_qgptdjetetaptbin43_"       , "QGPtD"       ,0   , 1.1 },
+    {"_b_qgaxis2jetetaptbin43_"     , "QGAxis2"     ,0   , 0.2 },
+    {"_b_qgmultjetetaptbin43_"      , "QGMult"      ,0   , 50  },
+    {"_b_qglikelihoodjetetaptbin44_", "QGLikelihood",0   , 1   },
+    {"_b_qgptdjetetaptbin44_"       , "QGPtD"       ,0   , 1.1 },
+    {"_b_qgaxis2jetetaptbin44_"     , "QGAxis2"     ,0   , 0.2 },
+    {"_b_qgmultjetetaptbin44_"      , "QGMult"      ,0   , 50  },
+    {"_b_qglikelihoodjetetaptbin45_", "QGLikelihood",0   , 1   },
+    {"_b_qgptdjetetaptbin45_"       , "QGPtD"       ,0   , 1.1 },
+    {"_b_qgaxis2jetetaptbin45_"     , "QGAxis2"     ,0   , 0.2 },
+    {"_b_qgmultjetetaptbin45_"      , "QGMult"      ,0   , 50  },
   };
 
   std::vector<Plotting_Parameter>::iterator iter_p;

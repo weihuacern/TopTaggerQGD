@@ -62,7 +62,8 @@ void prepareJetsForTagger(
                           const std::vector<double> &iniqgLikelihood,
                           const std::vector<double> &inirecoJetsBtag, 
                           std::vector<TLorentzVector> &jetsLVec_forTagger, 
-                          std::vector<double> &recoJetsBtag_forTagger
+                          std::vector<double> &recoJetsBtag_forTagger,
+                          std::vector<double> &qgLikelihood_forTagger
                          )
 {
   if( !( (runtype == "Normal") || (runtype == "MCTruth") || (runtype == "QGD") ) )
@@ -71,7 +72,7 @@ void prepareJetsForTagger(
     return ;
   }
 
-  jetsLVec_forTagger.clear(); recoJetsBtag_forTagger.clear();
+  jetsLVec_forTagger.clear(); recoJetsBtag_forTagger.clear(); qgLikelihood_forTagger.clear();
   for(unsigned int ij=0; ij<inijetsLVec.size(); ij++)
   {
     if( !AnaFunctions::jetPassCuts(inijetsLVec[ij], AnaConsts::pt30Arr) ) continue; 
@@ -85,6 +86,7 @@ void prepareJetsForTagger(
     }
     jetsLVec_forTagger.push_back(inijetsLVec.at(ij));
     recoJetsBtag_forTagger.push_back(inirecoJetsBtag.at(ij));
+    qgLikelihood_forTagger.push_back(iniqgLikelihood.at(ij));
   }
   if(jetsLVec_forTagger.size()<1){ std::cout << "0 jets for tagger input!! Run mode : " << runtype << std::endl; }
   return ;
