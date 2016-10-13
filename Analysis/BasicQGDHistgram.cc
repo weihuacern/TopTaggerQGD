@@ -58,6 +58,13 @@ void BasicQGDHistgram::BookHistgram(const char *outFileName)
 
   for( Int_t i = 0 ; i < JETSETA_BINS ; i++ )
   {
+    h_b_jetchargejetetabin[i] = new TH1D( ("h_b_jetchargejetetabin" + std::to_string(i)).c_str(),"",100,-1,1);
+    h_b_jetchargejetetabin_ljets[i] = new TH1D( ("h_b_jetchargejetetabin" + std::to_string(i) + "_ljets").c_str(),"",100,-1,1);
+    h_b_jetchargejetetabin_cjets[i] = new TH1D( ("h_b_jetchargejetetabin" + std::to_string(i) + "_cjets").c_str(),"",100,-1,1);
+    h_b_jetchargejetetabin_bjets[i] = new TH1D( ("h_b_jetchargejetetabin" + std::to_string(i) + "_bjets").c_str(),"",100,-1,1);
+    h_b_jetchargejetetabin_gjets[i] = new TH1D( ("h_b_jetchargejetetabin" + std::to_string(i) + "_gjets").c_str(),"",100,-1,1);
+    h_b_jetchargejetetabin_pjets[i] = new TH1D( ("h_b_jetchargejetetabin" + std::to_string(i) + "_pjets").c_str(),"",100,-1,1);
+
     h_b_qglikelihoodjetetabin[i] = new TH1D( ("h_b_qglikelihoodjetetabin" + std::to_string(i)).c_str(),"",500,-3,2);
     h_b_qglikelihoodjetetabin_ljets[i] = new TH1D( ("h_b_qglikelihoodjetetabin" + std::to_string(i) + "_ljets").c_str(),"",500,-3,2);
     h_b_qglikelihoodjetetabin_cjets[i] = new TH1D( ("h_b_qglikelihoodjetetabin" + std::to_string(i) + "_cjets").c_str(),"",500,-3,2);
@@ -141,7 +148,8 @@ void BasicQGDHistgram::BookHistgram(const char *outFileName)
     }
   }
 
-  h_b_jetid_qglikelihood = new TH2D("h_b_jetid_qglikelihood","",50,-25,25,50,-3,2);
- 
+  h_b_jetid_qglikelihood = new TH2D("h_b_jetid_qglikelihood","",50,-25,25,500,-3,2);
+  h_b_jetcharge_qglikelihood = new TH2D("h_b_jetcharge_qglikelihood","",100,-1,1,500,-3,2);
+
   return ;
 }

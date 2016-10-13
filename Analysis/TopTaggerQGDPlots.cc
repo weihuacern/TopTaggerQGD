@@ -44,6 +44,13 @@ int main(int argc, char* argv[])
     {"_b_qgaxis2_"     , "QGAxis2"     ,0   , 0.2 },
     {"_b_qgmult_"      , "QGMult"      ,0   , 50  },  
 
+    {"_b_jetchargejetetabin0_"   , "Jet Charge"  ,-1   , 1  },
+    {"_b_jetchargejetetabin1_"   , "Jet Charge"  ,-1   , 1  },
+    {"_b_jetchargejetetabin2_"   , "Jet Charge"  ,-1   , 1  },
+    {"_b_jetchargejetetabin3_"   , "Jet Charge"  ,-1   , 1  },
+    {"_b_jetchargejetetabin4_"   , "Jet Charge"  ,-1   , 1  },
+    {"_b_jetchargejetetabin5_"   , "Jet Charge"  ,-1   , 1  },
+
     {"_b_qglikelihoodjetetabin0_", "QGLikelihood",0   , 1   },
     {"_b_qgptdjetetabin0_"       , "QGPtD"       ,0   , 1.1 },
     {"_b_qgaxis2jetetabin0_"     , "QGAxis2"     ,0   , 0.2 },
